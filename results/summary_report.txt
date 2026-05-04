@@ -1,0 +1,67 @@
+NUMERICAL METHODS PROJECT SUMMARY
+Generated on: 04-May-2026 15:25:43
+
+Problem 1: Taylor Approximation
+Orders 2, 4 and 6 were evaluated on [0, 5]. As expected, the local error near the expansion point decreases when higher-order polynomials are used.
+
+    Order    MaxAbsoluteError    MeanAbsoluteError    MaxAbsoluteErrorNearExpansion
+    _____    ________________    _________________    _____________________________
+
+      2            10.78              3.7356                      1.3578           
+      4            23.92              4.1995                     0.25676           
+      6           14.404              1.7906                    0.019097           
+
+
+
+Problem 2: Root Finding
+Both methods converge to approximately 60.909843. Newton-Raphson is notably faster in iterations, while bisection preserves its robustness.
+
+         Method         Root     Iterations    FinalResidual
+    ________________    _____    __________    _____________
+
+    "Bisection"         60.91        26         1.5188e-06  
+    "Newton-Raphson"    60.91         5                  0  
+
+
+
+Problem 3: Polynomial Interpolation
+Lagrange and Newton interpolation produce identical estimates at x = 11 and x = 13, confirming that both formulations represent the same interpolating polynomial.
+
+    EvaluationPoint    LagrangeValue    NewtonValue    Difference
+    _______________    _____________    ___________    __________
+
+          11              232.89          232.89           0     
+          13              257.89          257.89           0     
+
+
+
+Problem 4: Numerical Integration
+Simpson's rule yields the smallest error and improves consistently as the number of subintervals increases. Reference integral: 652.191559.
+
+       Method        Subintervals    StepSize    ApproxIntegral    AbsoluteError
+    _____________    ____________    ________    ______________    _____________
+
+    "Trapezoidal"          6             2           649.56               2.63  
+    "Simpson"              6             2           652.24           0.049457  
+    "Trapezoidal"         12             1           651.54            0.65525  
+    "Simpson"             12             1           652.19          0.0030152  
+    "Trapezoidal"         24           0.5           652.03            0.16367  
+    "Simpson"             24           0.5           652.19         0.00018729  
+
+
+
+Problem 5: ODE Numerical Solution
+Runge-Kutta 4 is substantially more accurate than Euler for all evaluated step sizes on the interval [0, 10].
+
+        Method         StepSize    FinalApproximation    MaxAbsoluteError
+    _______________    ________    __________________    ________________
+
+    "Euler"                 1            494.47                 38.459   
+    "Runge-Kutta 4"         1            489.05               0.063061   
+    "Euler"               0.5            491.56                 19.242   
+    "Runge-Kutta 4"       0.5            489.09              0.0044498   
+    "Euler"              0.25            490.28                 9.6155   
+    "Runge-Kutta 4"      0.25            489.09             0.00029596   
+
+
+

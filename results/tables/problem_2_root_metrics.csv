@@ -1,0 +1,3 @@
+Method,Root,Iterations,FinalResidual
+Bisection,60.909843146801,26,1.51884393062574e-06
+Newton-Raphson,60.9098433158037,5,0
